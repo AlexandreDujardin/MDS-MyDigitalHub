@@ -147,7 +147,7 @@ jobs:
           
       - name: Pull and start containers
         run: |
-          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'cd ${{ secrets.DEPLOY_WORKDIR }} && docker-compose pull && docker-compose down && docker-compose up -d && exit'
+          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'cd ${{ secrets.DEPLOY_WORKDIR }} && docker compose pull && docker compose down && docker compose up -d && exit'
 
       - name: Clean up
         run: rm -rf ~/.ssh
